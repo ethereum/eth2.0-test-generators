@@ -1,0 +1,43 @@
+version: 2.1
+
+jobs:
+
+  build:
+    docker:
+      - image: circleci/python:3.6
+      - persist_to_workspace
+        root: /tmp/workspace
+        paths:
+        - tests
+      - checkout
+      - run
+        name: Generate tests
+        command: make all
+      - run
+        name: Save tests for deployment
+        command: |
+          mkdir /tmp/workspace
+          cp -r tests /tmp/workspace/
+
+  commit:
+    machine:
+      image: circleci/classic:latest
+      steps:
+        - attach_workspace
+          at: workspace
+        - run
+          name: Checkout test repo
+          command: git checkout https://
+        - run
+          name: Commit new tests
+
+
+
+
+workflows:
+  version: 2
+  build_and_commit:
+    jobs:
+      - build
+      - commit
+        requires: build
