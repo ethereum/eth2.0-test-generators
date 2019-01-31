@@ -24,15 +24,26 @@ jobs:
     docker:
       - image: circleci/python3.6
     steps:
-    - attach_workspace:
-        at: /tmp/workspace
-    - run:
-        name: Checkout test repository
-        command: |
-          git clone git@github.com:ethereum/eth2.0-tests.git
-    - run:
-        name: Commit generated tests
-        command: |
-          cp -r /tmp/workspace/tests .
-          git add .
-          git commit -m "Update generated tests"
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: Checkout test repository
+          command: |
+            git clone git@github.com:ethereum/eth2.0-tests.git
+      - run:
+          name: Commit generated tests
+          command: |
+            cp -r /tmp/workspace/tests .
+            git add .
+            git commit -m "Update generated tests"
+
+
+workflows:
+  version: 2.1
+
+  build_and_commit:
+    jobs:
+      - build
+      - commit:
+          requires:
+            - build
