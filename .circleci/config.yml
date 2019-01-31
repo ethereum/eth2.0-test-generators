@@ -48,13 +48,12 @@ jobs:
             cp -r /tmp/workspace/tests .
             git add .
 
-            git diff --cached --exit-code >& /dev/null
-            if [ $? -eq 1 ]; then
-              echo "Some changes to commit"
-            else
+
+            if git diff --cached --exit-code >& /dev/null; then
               echo "No changes to commit"
+            else
+              echo "Some changes to commit"
             fi
-            true
 
 
 workflows:
