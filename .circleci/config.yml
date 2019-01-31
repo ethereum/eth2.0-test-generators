@@ -37,6 +37,7 @@ jobs:
       - run:
           name: Commit generated tests
           command: |
+            cd eth2.0-tests
             cp -r /tmp/workspace/tests .
             git add .
             git commit -m "Update generated tests"
