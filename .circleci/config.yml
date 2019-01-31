@@ -37,6 +37,9 @@ jobs:
       - run:
           name: Commit generated tests
           command: |
+            git config user.name 'eth2TestGenBot'
+            git config user.email '<>'
+
             cd eth2.0-tests
             cp -r /tmp/workspace/tests .
             git add .
