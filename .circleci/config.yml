@@ -48,6 +48,7 @@ jobs:
             cp -r /tmp/workspace/tests .
             git add .
 
+            git diff --cached --exit-code
 
 
 workflows:
