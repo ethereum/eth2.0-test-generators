@@ -45,7 +45,7 @@ jobs:
             git config user.name 'eth2TestGenBot'
             git config user.email '<>'
 
-            cp -r /tmp/workspace/tests .
+            rsync -a --delete /tmp/workspace/tests/* .
             git add .
 
             if git diff --cached --exit-code >& /dev/null; then
