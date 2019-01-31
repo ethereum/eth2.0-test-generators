@@ -22,7 +22,7 @@ jobs:
 
   commit:
     docker:
-      - image: circleci/python3.6
+      - image: circleci/python:3.6
     steps:
       - attach_workspace:
           at: /tmp/workspace
