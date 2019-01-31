@@ -33,7 +33,7 @@ jobs:
           name: Checkout test repository
           command: |
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-            git clone git@github.com:ethereum/eth2.0-tests.git
+            git clone git@github.com:jannikluhn/eth2.0-tests-test.git
       - run:
           name: Commit generated tests
           command: |
@@ -45,6 +45,11 @@ jobs:
             cp -r /tmp/workspace/tests .
             git add .
             git commit -m "Update generated tests"
+      - run:
+          name: Push changes to master
+          command: |
+            cd eth2.0-tests
+            git push origin master
 
 
 workflows:
