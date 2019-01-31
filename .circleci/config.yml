@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Commit generated tests
           command: |
-            cd eth2.0-tests
+            cd eth2.0-tests-test
 
             git config user.name 'eth2TestGenBot'
             git config user.email '<>'
@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Push changes to master
           command: |
-            cd eth2.0-tests
+            cd eth2.0-tests-test
             git push origin master
 
 
