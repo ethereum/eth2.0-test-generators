@@ -38,7 +38,7 @@ jobs:
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
             git clone git@github.com:jannikluhn/eth2.0-tests-test.git
       - run:
-          name: Commit generated tests
+          name: Commit and push generated tests
           command: |
             cd eth2.0-tests-test
 
@@ -58,7 +58,6 @@ jobs:
             else
               echo "No changes to commit"
             fi
-
 
 
 workflows:
