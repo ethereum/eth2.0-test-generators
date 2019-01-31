@@ -50,11 +50,12 @@ jobs:
 
             git diff --cached --exit-code >& /dev/null
             if [ $? -eq 1 ]; then
-              echo -e "Update generated tests\n\nLatest commit from eth2.0-test-generators:\n" > commit_message
-              cat /tmp/workspace/latest_commit_message >> commit_message
-              git commit -F commit_message
-
-              git push origin master
+#              echo -e "Update generated tests\n\nLatest commit from eth2.0-test-generators:\n" > commit_message
+#              cat /tmp/workspace/latest_commit_message >> commit_message
+#              git commit -F commit_message
+#
+#              git push origin master
+              echo "Some changes to commit"
             else
               echo "No changes to commit"
             fi
