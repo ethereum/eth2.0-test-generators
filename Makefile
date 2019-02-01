@@ -5,7 +5,7 @@ TEST_DIR = ./tests
 .PHONY: clean all
 
 
-all: ;
+all: $(TEST_DIR)
 
 
 clean:
@@ -15,6 +15,9 @@ clean:
 #
 # test generators
 #
+
+$(TEST_DIR):
+    mkdir -p $@
 
 # Example:
 #
