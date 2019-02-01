@@ -17,7 +17,7 @@ clean:
 #
 
 $(TEST_DIR):
-    mkdir -p $@
+	mkdir -p $@
 
 # Example:
 #
