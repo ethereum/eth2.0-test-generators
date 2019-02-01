@@ -67,7 +67,15 @@ workflows:
 
   build_and_commit:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /.*/
       - commit:
           requires:
             - build
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
