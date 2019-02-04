@@ -36,11 +36,11 @@ jobs:
           name: Checkout test repository
           command: |
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-            git clone git@github.com:jannikluhn/eth2.0-tests-test.git
+            git clone git@github.com:ethereum/eth2.0-tests.git
       - run:
           name: Commit and push generated tests
           command: |
-            cd eth2.0-tests-test
+            cd eth2.0-tests
 
             git config user.name 'eth2TestGenBot'
             git config user.email '<>'
