@@ -22,7 +22,11 @@ $(TEST_DIR):
 
 $(TEST_DIR)/shuffling:
 	mkdir -p $@
+
+	python -m venv .venv
+	. .venv/bin/activate
 	pip install -r $(GENERATOR_DIR)/shuffling/requirements.txt
+
 	python $(GENERATOR_DIR)/shuffling/tgen_shuffling.py $@/test_vector_shuffling.yml
 
 
