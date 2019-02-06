@@ -6,7 +6,7 @@ VENV_DIR = ./.venvs
 .PHONY: clean all
 
 
-all: $(TEST_DIR) $(TEST_DIR)/shuffling $(TEST_DIR)/bls
+all: $(TEST_DIR) $(TEST_DIR)/shuffling $(TEST_DIR)/bls $(TEST_DIR)/ssz
 
 
 clean:
@@ -40,6 +40,16 @@ $(TEST_DIR)/bls:
 	pip install -r $(GENERATOR_DIR)/bls/requirements.txt --user
 
 	python $(GENERATOR_DIR)/bls/tgen_bls.py $@/test_bls.yml
+
+
+$(TEST_DIR)/ssz:
+	mkdir -p $@
+
+	python -m venv $(VENV_DIR)/ssz
+	. $(VENV_DIR)/ssz/bin/activate
+	pip install -r $(GENERATOR_DIR)/ssz/requirements.txt --user
+
+	python $(GENERATOR_DIR)/ssz/test_generator.py -o $@
 
 
 # Example:
