@@ -38,6 +38,16 @@ if __name__ == '__main__':
 
     # Manual cases
     cases = [
+        # All indices in a list of length 1.
+        {"index": 0, "list_size": 1, "seed": random_seed()},
+        # All indices in a list of length 2.
+        {"index": 0, "list_size": 2, "seed": random_seed()},
+        {"index": 1, "list_size": 2, "seed": random_seed()},
+        # All indices in a list of length 3.
+        {"index": 0, "list_size": 3, "seed": random_seed()},
+        {"index": 1, "list_size": 3, "seed": random_seed()},
+        {"index": 2, "list_size": 3, "seed": random_seed()},
+        # Start and end of a list of length 1024.
         {"index": 0, "list_size": 1024, "seed": random_seed()},
         {"index": 1023, "list_size": 1024, "seed": random_seed()},
     ]
