@@ -47,8 +47,8 @@ if __name__ == '__main__':
         list_size = random.randint(1, max_list_size)
         index = random.randint(0, list_size)
         cases.append({
-            "index": random.randint(0, max_list_size),
-            "list_size": random.randint(0, max_list_size),
+            "index": index,
+            "list_size": list_size,
             "seed": random_seed(),
         })
 
