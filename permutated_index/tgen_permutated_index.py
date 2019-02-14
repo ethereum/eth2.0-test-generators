@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # Manual cases
     cases = [
         {"index": 0, "list_size": 1024, "seed": random_seed()},
-        {"index": 1024, "list_size": 1024, "seed": random_seed()},
+        {"index": 1023, "list_size": 1024, "seed": random_seed()},
     ]
 
     # Randomly generated cases
