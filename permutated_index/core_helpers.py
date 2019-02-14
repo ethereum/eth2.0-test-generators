@@ -1,5 +1,5 @@
 """
-copy-pasted from specs
+All functions derived from spec v0.2.0
 """
 
 from typing import Any, Dict, List
