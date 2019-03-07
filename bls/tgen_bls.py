@@ -155,10 +155,12 @@ if __name__ == '__main__':
                 'output': '0x' + bls.aggregate_signatures(sigs).hex(),
             })
 
-    case07_aggregate_pubkeys = {
-        'input': pubkeys_serial,
-        'output': '0x' + bls.aggregate_pubkeys(pubkeys).hex(),
-    }
+    case07_aggregate_pubkeys = [
+        {
+            'input': pubkeys_serial,
+            'output': '0x' + bls.aggregate_pubkeys(pubkeys).hex(),
+        }
+    ]
 
     # TODO
     # Aggregate verify
