@@ -15,12 +15,13 @@ import yaml
 from eth_utils import int_to_big_endian, big_endian_to_int
 
 # Local imports
-import bls
-from hash import hash_eth2
+from py_ecc import bls
 
 
 def int_to_hex(n: int) -> str:
     return '0x' + int_to_big_endian(n).hex()
+
+
 def hex_to_int(x: str) -> int:
     return int(x, 16)
 
@@ -66,7 +67,7 @@ def hash_message(msg: bytes,
             int_to_hex(fq2.coeffs[0]),
             int_to_hex(fq2.coeffs[1]),
         ]
-        for fq2 in bls.hash_to_G2(msg, domain)
+        for fq2 in bls.utils.hash_to_G2(msg, domain)
     ]
 
 
@@ -79,7 +80,7 @@ def hash_message_compressed(msg: bytes, domain: int) -> Tuple[str, str]:
     Output:
         - Message hash as a compressed G2 point
     """
-    z1, z2 = bls.compress_G2(bls.hash_to_G2(msg, domain))
+    z1, z2 = bls.utils.compress_G2(bls.utils.hash_to_G2(msg, domain))
     return [int_to_hex(z1), int_to_hex(z2)]
 
 
