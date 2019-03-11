@@ -25,31 +25,31 @@ $(TEST_DIR):
 $(TEST_DIR)/shuffling:
 	mkdir -p $@
 
-	python -m venv $(VENV_DIR)/shuffling
+	python3 -m venv $(VENV_DIR)/shuffling
 	. $(VENV_DIR)/shuffling/bin/activate
-	pip install -r $(GENERATOR_DIR)/shuffling/requirements.txt --user
+	pip3 install -r $(GENERATOR_DIR)/shuffling/requirements.txt --user
 
-	python $(GENERATOR_DIR)/shuffling/tgen_shuffling.py $@
+	python3 $(GENERATOR_DIR)/shuffling/tgen_shuffling.py $@
 
 
 $(TEST_DIR)/bls:
 	mkdir -p $@
 
-	python -m venv $(VENV_DIR)/bls
+	python3 -m venv $(VENV_DIR)/bls
 	. $(VENV_DIR)/bls/bin/activate
-	pip install -r $(GENERATOR_DIR)/bls/requirements.txt --user
+	pip3 install -r $(GENERATOR_DIR)/bls/requirements.txt --user
 
-	python $(GENERATOR_DIR)/bls/tgen_bls.py $@/test_bls.yml
+	python3 $(GENERATOR_DIR)/bls/tgen_bls.py $@/test_bls.yml
 
 
 $(TEST_DIR)/ssz:
 	mkdir -p $@
 
-	python -m venv $(VENV_DIR)/ssz
+	python3 -m venv $(VENV_DIR)/ssz
 	. $(VENV_DIR)/ssz/bin/activate
-	pip install -r $(GENERATOR_DIR)/ssz/requirements.txt --user
+	pip3 install -r $(GENERATOR_DIR)/ssz/requirements.txt --user
 
-	python $(GENERATOR_DIR)/ssz/test_generator.py -o $@
+	python3 $(GENERATOR_DIR)/ssz/test_generator.py -o $@
 
 
 # Example:
