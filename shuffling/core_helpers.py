@@ -1,8 +1,3 @@
-"""
-Compatible with v0.4:
-https://github.com/ethereum/eth2.0-specs/releases/tag/v0.4
-"""
-
 from typing import Any, List, NewType
 
 from constants import SLOTS_PER_EPOCH, SHARD_COUNT, TARGET_COMMITTEE_SIZE, SHUFFLE_ROUND_COUNT

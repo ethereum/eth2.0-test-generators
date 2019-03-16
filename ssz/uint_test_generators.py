@@ -31,7 +31,7 @@ def generate_uint_bounds_test():
     return render_test(
         title="UInt Bounds",
         summary="Integers right at or beyond the bounds of the allowed value range",
-        version="0.1",
+        fork="phase0-0.2.0",
         test_cases=test_cases,
     )
 
@@ -42,7 +42,7 @@ def generate_uint_random_test():
     return render_test(
         title="UInt Random",
         summary="Random integers chosen uniformly over the allowed value range",
-        version="0.1",
+        fork="phase0-0.2.0",
         test_cases=test_cases,
     )
 
@@ -53,7 +53,7 @@ def generate_uint_wrong_length_test():
     return render_test(
         title="UInt Wrong Length",
         summary="Serialized integers that are too short or too long",
-        version="0.1",
+        fork="phase0-0.2.0",
         test_cases=test_cases,
     )
 

@@ -36,8 +36,7 @@ def active_exited_validators_generator():
         'summary': 'Test vectors for validator shuffling with different validator\'s activity status.'
                    ' Note: only relevant validator fields are defined.',
         'test_suite': 'shuffle',
-        'fork': 'tchaikovsky',
-        'version': 1.0
+        'fork': 'phase0-0.5.0',
     }
 
     # Config
