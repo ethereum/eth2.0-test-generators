@@ -43,7 +43,7 @@ jobs:
             cd eth2.0-tests
 
             git config user.name 'eth2TestGenBot'
-            git config user.email '<>'
+            git config user.email '47188154+eth2TestGenBot@users.noreply.github.com'
 
             for filename in /tmp/workspace/tests/*; do
               rm -rf $(basename $filename)
