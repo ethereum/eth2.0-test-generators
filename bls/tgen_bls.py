@@ -91,8 +91,7 @@ if __name__ == '__main__':
         'title': 'BLS signature and aggregation tests',
         'summary': 'Test vectors for BLS signature',
         'test_suite': 'bls',
-        'fork': 'tchaikovsky',
-        'version': 1.0
+        'fork': 'phase0-0.5.0',
     }
 
     case01_message_hash_G2_uncompressed = []
